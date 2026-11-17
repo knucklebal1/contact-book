@@ -1,10 +1,14 @@
-# Contact Book 前端
+# Contact Book Frontend
 
-React + Vite 单页应用，对接仓库 `backend/` 中的 Spring Boot API。
+A React + Vite single-page application that connects to the Spring Boot API in
+the `backend/` directory.
 
-## 本地启动
+## Requirements
 
-要求 Node.js 20.19+ 或 22.12+，以及可用的后端（默认 `http://localhost:8080`）。
+- Node.js 20.19 or later, or Node.js 22.12 or later
+- A running backend at `http://localhost:8080` by default
+
+## Run Locally
 
 ```powershell
 cd frontend
@@ -12,12 +16,24 @@ npm install
 npm run dev
 ```
 
-浏览器访问终端显示的地址。开发服务器会将 `/api` 代理到 `http://localhost:8080`。
-也可以在部署时设置 `VITE_API_BASE_URL` 指向后端地址（不要以 `/` 结尾），然后执行 `npm run build`。
+Open the local URL displayed in the terminal. The development server proxies
+`/api` requests to `http://localhost:8080`.
+
+For production builds, set `VITE_API_BASE_URL` to the backend API URL. The URL
+must not end with a slash.
 
 ```powershell
 npm test
 npm run build
 ```
 
-功能：联系人分页与搜索、收藏筛选、增删改、多种联系方式、Excel 导入/导出及模板下载。导入仅接受不超过 5 MB 的 `.xlsx` 文件。列表导出遵循当前搜索和收藏筛选条件。
+## Features
+
+- Paginated contact list and keyword search
+- Favorite and unfavorite actions with favorite-only filtering
+- Contact creation, editing, and deletion
+- Dynamic support for multiple contact methods
+- Excel template download, import, and export
+
+Imports accept only `.xlsx` files with a maximum size of 5 MB. Exported files
+respect the active search keyword and favorite filter.
