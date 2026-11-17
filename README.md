@@ -5,6 +5,7 @@
 ```text
 contact-book/
 ├── backend/   Spring Boot 后端
+├── frontend/  React + Vite 前端
 ├── docs/      接口和数据库文档
 └── README.md
 ```
@@ -51,3 +52,15 @@ mvn clean package
 ```
 
 接口文档见 [docs/api.md](docs/api.md)，数据库设计见 [docs/database.md](docs/database.md)。
+
+## 前端运行
+
+另开终端，先确保后端运行在 `http://localhost:8080`，然后：
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+访问终端给出的本地地址（默认 `http://127.0.0.1:5173/`）。开发服务器将 `/api` 转发到后端。前端的构建和测试命令为 `npm run build`、`npm test`。详细说明见 [frontend/README.md](frontend/README.md)。
